@@ -4,10 +4,9 @@ pragma solidity >=0.7.0 <0.9.0;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract Termyt is ERC721Enumerable, Ownable {
-  using Strings for uint256;
-
   string baseURI;
   string public baseExtension = ".json";
   uint256 public cost = 1 ether;
@@ -67,7 +66,7 @@ contract Termyt is ERC721Enumerable, Ownable {
   {
     string memory currentBaseURI = _baseURI();
     return bytes(currentBaseURI).length > 0
-        ? string(abi.encodePacked(currentBaseURI, tokenId, baseExtension))
+        ? string(abi.encodePacked(currentBaseURI, Strings.toString(tokenId), baseExtension))
         : "";
   }
 

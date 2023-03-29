@@ -8,7 +8,7 @@ const hre = require("hardhat");
 
 async function main() {
   const Termyt = await hre.ethers.getContractFactory("Termyt");
-  const termyt = await Termyt.deploy("Termyt", "TMT", "https://moccasin-petite-piranha-265.mypinata.cloud/ipfs/QmaHvLho2mMrkBqHiUnXWvLBkesTShhaNBfBX3bu7hE6Xc/");
+  const termyt = await Termyt.deploy("Termyt", "TMT", "https://moccasin-petite-piranha-265.mypinata.cloud/ipfs/QmZzhZgFAXvh79CXbTzAE4f3zMkeRQd6brkZm9DZ4WSvFe/");
 
   await termyt.deployed();
 
